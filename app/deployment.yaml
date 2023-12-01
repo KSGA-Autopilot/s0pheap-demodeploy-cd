@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s0pheap-demodeploy-deployment
+  labels:
+    app: s0pheap-demodeploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: s0pheap-demodeploy
+  template:
+    metadata:
+      labels:
+        app: s0pheap-demodeploy
+    spec:
+      containers:
+        - name: s0pheap-demodeploy
+          image: kshrdautopilot/s0pheap-demodeploy
+          ports:
+            - containerPort: 8080
