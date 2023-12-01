@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: s0pheap-demodeploy-ingress
+  namespace: s0pheap
+spec:
+  tls:
+    - hosts:
+        - probe6.hanyeaktong.site
+      secretName: probe6-hanyeaktong-site-cert
+  rules:
+    - host: probe6.hanyeaktong.site
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: s0pheap-demodeploy-svc
+                port:
+                  number: 8080
