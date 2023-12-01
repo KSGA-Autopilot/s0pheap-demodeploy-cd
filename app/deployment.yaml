@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: s0pheap-demodeploy
-          image: kshrdautopilot/s0pheap-demodeploy
+          image: kshrdautopilot/s0pheap-demodeploy:2023-12-01-02-02-39
           ports:
             - containerPort: 8080
